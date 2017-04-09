@@ -9,7 +9,6 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $content
  * @property int $user_id
- * @property string $gabarito
  *
  * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Alternative[] $alternatives

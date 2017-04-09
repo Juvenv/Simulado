@@ -28,6 +28,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
+    
+    <?= $this->Html->script('jquery-3.2.0.js') ?>
+    <?= $this->Html->script('tinymce/tinymce.min.js') ?>
+    <?= $this->Html->script('simulado.js') ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -53,5 +57,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </div>
     <footer>
     </footer>
+    
 </body>
 </html>

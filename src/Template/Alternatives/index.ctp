@@ -17,9 +17,8 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('content') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('question_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('comment') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('gabarito') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -27,9 +26,8 @@
             <?php foreach ($alternatives as $alternative): ?>
             <tr>
                 <td><?= $this->Number->format($alternative->id) ?></td>
-                <td><?= h($alternative->content) ?></td>
                 <td><?= $alternative->has('question') ? $this->Html->link($alternative->question->id, ['controller' => 'Questions', 'action' => 'view', $alternative->question->id]) : '' ?></td>
-                <td><?= h($alternative->comment) ?></td>
+                <td><?= h($alternative->gabarito) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $alternative->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $alternative->id]) ?>

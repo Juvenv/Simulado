@@ -67,9 +67,6 @@ class QuestionsTable extends Table
         $validator
             ->allowEmpty('content');
 
-        $validator
-            ->allowEmpty('gabarito');
-
         return $validator;
     }
 

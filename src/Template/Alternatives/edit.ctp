@@ -25,6 +25,7 @@
             echo $this->Form->control('content');
             echo $this->Form->control('question_id', ['options' => $questions]);
             echo $this->Form->control('comment');
+            echo $this->Form->control('gabarito');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

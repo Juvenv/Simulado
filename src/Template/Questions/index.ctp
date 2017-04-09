@@ -22,7 +22,6 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('gabarito') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -31,7 +30,6 @@
             <tr>
                 <td><?= $this->Number->format($question->id) ?></td>
                 <td><?= $question->has('user') ? $this->Html->link($question->user->name, ['controller' => 'Users', 'action' => 'view', $question->user->id]) : '' ?></td>
-                <td><?= h($question->gabarito) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $question->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $question->id]) ?>

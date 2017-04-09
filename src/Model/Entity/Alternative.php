@@ -10,6 +10,7 @@ use Cake\ORM\Entity;
  * @property string $content
  * @property int $question_id
  * @property string $comment
+ * @property bool $gabarito
  *
  * @property \App\Model\Entity\Question $question
  */

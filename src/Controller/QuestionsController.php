@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Core\App;
 
 /**
  * Questions Controller
@@ -112,5 +113,21 @@ class QuestionsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+    
+    /**
+     * Post method
+     * 
+     * */
+    public function upload(){
+    	$arquivo = $this->request->getData('file');
+    	    	
+    	move_uploaded_file($arquivo['tmp_name'], WWW_ROOT . '/img/uploads/' .
+    			$arquivo['name']);
+    	
+    	$this->response = $this->response->withType('application/json')
+    	->withStringBody(json_encode(['location' => '/img/uploads/' .
+    			$arquivo['name']]));
+    	return $this->response;
     }
 }

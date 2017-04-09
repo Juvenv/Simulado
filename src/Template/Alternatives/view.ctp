@@ -18,20 +18,24 @@
     <h3><?= h($alternative->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Content') ?></th>
-            <td><?= h($alternative->content) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Question') ?></th>
             <td><?= $alternative->has('question') ? $this->Html->link($alternative->question->id, ['controller' => 'Questions', 'action' => 'view', $alternative->question->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Comment') ?></th>
-            <td><?= h($alternative->comment) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($alternative->id) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Gabarito') ?></th>
+            <td><?= $alternative->gabarito ? __('Yes') : __('No'); ?></td>
+        </tr>
     </table>
+    <div class="row">
+        <h4><?= __('Content') ?></h4>
+        <?= ($alternative->content); ?>
+    </div>
+    <div class="row">
+        <h4><?= __('Comment') ?></h4>
+        <?= $alternative->comment; ?>
+    </div>
 </div>

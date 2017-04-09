@@ -60,6 +60,11 @@ class AlternativesTable extends Table
         $validator
             ->allowEmpty('comment');
 
+        $validator
+            ->boolean('gabarito')
+            ->requirePresence('gabarito', 'create')
+            ->notEmpty('gabarito');
+
         return $validator;
     }
 

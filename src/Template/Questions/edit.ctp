@@ -28,7 +28,6 @@
         <?php
             echo $this->Form->control('content');
             echo $this->Form->control('user_id', ['options' => $users]);
-            echo $this->Form->control('gabarito');
             echo $this->Form->control('tags._ids', ['options' => $tags]);
         ?>
     </fieldset>

@@ -26,17 +26,13 @@
             <td><?= $question->has('user') ? $this->Html->link($question->user->name, ['controller' => 'Users', 'action' => 'view', $question->user->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Gabarito') ?></th>
-            <td><?= h($question->gabarito) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($question->id) ?></td>
         </tr>
     </table>
     <div class="row">
         <h4><?= __('Content') ?></h4>
-        <?= $this->Text->autoParagraph(h($question->content)); ?>
+        <?= ($question->content); ?>
     </div>
     <div class="related">
         <h4><?= __('Related Alternatives') ?></h4>
@@ -47,6 +43,7 @@
                 <th scope="col"><?= __('Content') ?></th>
                 <th scope="col"><?= __('Question Id') ?></th>
                 <th scope="col"><?= __('Comment') ?></th>
+                <th scope="col"><?= __('Gabarito') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($question->alternatives as $alternatives): ?>
@@ -55,6 +52,7 @@
                 <td><?= h($alternatives->content) ?></td>
                 <td><?= h($alternatives->question_id) ?></td>
                 <td><?= h($alternatives->comment) ?></td>
+                <td><?= h($alternatives->gabarito) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Alternatives', 'action' => 'view', $alternatives->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Alternatives', 'action' => 'edit', $alternatives->id]) ?>

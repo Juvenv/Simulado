@@ -57,6 +57,13 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
     /**
+     * Rotas customizadas
+     * */
+    $routes->connect('/questions/upload', ['controller' => 'Questions', 'action' => 'upload', 
+    		'_method' => 'POST'
+    ]);
+    
+    /**
      * Connect catchall routes for all controllers.
      *
      * Using the argument `DashedRoute`, the `fallbacks` method is a shortcut for
