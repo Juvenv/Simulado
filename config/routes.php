@@ -63,6 +63,10 @@ Router::scope('/', function (RouteBuilder $routes) {
     		'_method' => 'POST'
     ]);
     
+    $routes->connect('/simulados/simulado', ['controller' => 'simulados', 'action' => 'simulado',
+    		'_method' => 'GET'
+    ]);
+    
     /**
      * Connect catchall routes for all controllers.
      *
