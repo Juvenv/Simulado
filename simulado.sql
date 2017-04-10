@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 10, 2017 at 03:44 
+-- Generation Time: Apr 10, 2017 at 03:46 
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 7.0.9
 
@@ -34,15 +34,6 @@ CREATE TABLE `alternatives` (
   `gabarito` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `alternatives`
---
-
-INSERT INTO `alternatives` (`id`, `content`, `question_id`, `comment`, `gabarito`) VALUES
-(1, '<p>sei la</p>', 1, '<p>Essa resposta est&aacute; errada por que</p>', 0),
-(2, '<p>autotexto.</p>', 4, '<p>Sei la</p>', 0),
-(3, '<p>hiperlink</p>', 1, '<p>certa</p>', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -55,16 +46,6 @@ CREATE TABLE `questions` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `questions`
---
-
-INSERT INTO `questions` (`id`, `content`, `user_id`) VALUES
-(1, 'Sei la', 1),
-(2, '<p>Este &eacute; o meu primeiro teste com o Tynemce.</p>\n<p>Ser&aacute; que via <strong>funcionar!</strong></p>\n<p style="text-align: center;">Texto centralizado</p>\n<p style="text-align: right;">Texto alinhado &agrave; direita</p>\n<p>Texto Alinhado &agrave; esquerda</p>\n<p style="text-align: justify;">Este texto deveria estar com o alinhamento justificado. MAs para isso o texto deve chegar ao final da linha, o que n&atilde;o deve muito facil, ja que a linha &eacute; muito grande.</p>\n<p>&nbsp;</p>', 1),
-(3, '<p><img title="resposta desafio - amigas na escola - 1.png" src="../../img/uploads/blobid1491705777956.png" alt="" width="1291" height="666" /></p>\r\n<p>Ser&aacute; que vai dar certo</p>', 1),
-(4, '<p>O recurso no BrOffice Writer que permite que um usu&aacute;rio armazene um texto, que possa conter gr&aacute;ficos, tabelas e campos, de modo que se permita rapidamente inseri-lo posteriormente em um documento &eacute; o de:</p>', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -75,15 +56,6 @@ CREATE TABLE `questions_tags` (
   `question_id` int(11) NOT NULL,
   `tag_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `questions_tags`
---
-
-INSERT INTO `questions_tags` (`question_id`, `tag_id`) VALUES
-(1, 1),
-(2, 1),
-(4, 1);
 
 -- --------------------------------------------------------
 
@@ -108,13 +80,6 @@ CREATE TABLE `tags` (
   `name` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tags`
---
-
-INSERT INTO `tags` (`id`, `name`) VALUES
-(1, 'Sei lá');
-
 -- --------------------------------------------------------
 
 --
@@ -128,13 +93,6 @@ CREATE TABLE `users` (
   `username` varchar(20) NOT NULL,
   `type` varchar(45) DEFAULT NULL COMMENT 'Tipo de usuário. Se pode\ncadastrar questões ou apenas\nacessar questões.\nauthor, aluno\n'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabela usuários';
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `password`, `username`, `type`) VALUES
-(1, 'Antônio', 'eitasenhavea', 'antonio', 'admin');
 
 --
 -- Indexes for dumped tables
