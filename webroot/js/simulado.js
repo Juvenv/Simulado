@@ -124,6 +124,7 @@ $(document).ready(function(){
 		
 		$('#conferir').on( 'click', function() {
 			 simulado.corrigir($('input:checked'));
+			 $(this).prop('disabled', true);
 		});
 	}
 });
